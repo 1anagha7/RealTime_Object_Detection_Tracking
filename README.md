@@ -40,8 +40,8 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 
 ### Step 2 — Spawn Objects in Environment
 
-# RED
 ```bash
+# RED
 echo "<sdf version='1.6'><model name='red'><static>true</static><link name='l'><visual name='v'><geometry><box><size>1 1 1</size></box></geometry><material><ambient>1 0 0 1</ambient></material></visual></link></model></sdf>" | ros2 run gazebo_ros spawn_entity.py -entity red -stdin -x 1 -y 0 -z 0.5
 
 
