@@ -28,16 +28,21 @@ The system integrates:
 
 ---
 
-## ⚙️ Setup & Running the Project
+## Setup & Running the Project
 
 ### Step 1 — Launch Gazebo Simulation
+
+```bash
 export TURTLEBOT3_MODEL=waffle_pi
 ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 - This starts the simulation environment with the TurtleBot3 robot.
 
 ### Step 2 — Spawn Objects in Environment
+
 # RED
-- "echo "<sdf version='1.6'><model name='red'><static>true</static><link name='l'><visual name='v'><geometry><box><size>1 1 1</size></box></geometry><material><ambient>1 0 0 1</ambient></material></visual></link></model></sdf>" | ros2 run gazebo_ros spawn_entity.py -entity red -stdin -x 1 -y 0 -z 0.5"
+```bash
+echo "<sdf version='1.6'><model name='red'><static>true</static><link name='l'><visual name='v'><geometry><box><size>1 1 1</size></box></geometry><material><ambient>1 0 0 1</ambient></material></visual></link></model></sdf>" | ros2 run gazebo_ros spawn_entity.py -entity red -stdin -x 1 -y 0 -z 0.5
+
 
 # GREEN
 - "echo "<sdf version='1.6'><model name='green'><static>true</static><link name='l'><visual name='v'><geometry><box><size>1 1 1</size></box></geometry><material><ambient>0 1 0 1</ambient></material></visual></link></model></sdf>" | ros2 run gazebo_ros spawn_entity.py -entity green -stdin -x -1 -y 1 -z 0.5"
@@ -48,6 +53,8 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 - These commands spawn colored objects into the simulation.
 
 ### Step 3 — Run Detection Node
+
+```bash
 - cd ~/turtlebot3_ws
 - source install/setup.bash
 - ros2 run object_tracking detect_final
@@ -55,6 +62,8 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 - This starts the object detection system using OpenCV.
 
 ### Step 4 — Control the Robot
+
+```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 - Use keyboard controls to move the robot and observe real-time detection.
