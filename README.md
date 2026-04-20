@@ -36,12 +36,14 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 - This starts the simulation environment with the TurtleBot3 robot.
 
 ### Step 2 — Spawn Objects in Environment
-Red Object:
-echo "<sdf version='1.6'><model name='red'><static>true</static><link name='l'><visual name='v'><geometry><box><size>1 1 1</size></box></geometry><material><ambient>1 0 0 1</ambient></material></visual></link></model></sdf>" | ros2 run gazebo_ros spawn_entity.py -entity red -stdin -x 1 -y 0 -z 0.5
-Green Object:
-echo "<sdf version='1.6'><model name='green'><static>true</static><link name='l'><visual name='v'><geometry><box><size>1 1 1</size></box></geometry><material><ambient>0 1 0 1</ambient></material></visual></link></model></sdf>" | ros2 run gazebo_ros spawn_entity.py -entity green -stdin -x -1 -y 1 -z 0.5
-Blue Object:
-echo "<sdf version='1.6'><model name='blue'><static>true</static><link name='l'><visual name='v'><geometry><box><size>1 1 1</size></box></geometry><material><ambient>0 0 1 1</ambient></material></visual></link></model></sdf>" | ros2 run gazebo_ros spawn_entity.py -entity blue -stdin -x 1 -y 2 -z 0.5
+# RED
+- echo "<sdf version='1.6'><model name='red'><static>true</static><link name='l'><visual name='v'><geometry><box><size>1 1 1</size></box></geometry><material><ambient>1 0 0 1</ambient></material></visual></link></model></sdf>" | ros2 run gazebo_ros spawn_entity.py -entity red -stdin -x 1 -y 0 -z 0.5
+
+# GREEN
+- echo "<sdf version='1.6'><model name='green'><static>true</static><link name='l'><visual name='v'><geometry><box><size>1 1 1</size></box></geometry><material><ambient>0 1 0 1</ambient></material></visual></link></model></sdf>" | ros2 run gazebo_ros spawn_entity.py -entity green -stdin -x -1 -y 1 -z 0.5
+
+# BLUE
+- echo "<sdf version='1.6'><model name='blue'><static>true</static><link name='l'><visual name='v'><geometry><box><size>1 1 1</size></box></geometry><material><ambient>0 0 1 1</ambient></material></visual></link></model></sdf>" | ros2 run gazebo_ros spawn_entity.py -entity blue -stdin -x 1 -y 2 -z 0.5
 
 - These commands spawn colored objects into the simulation.
 
